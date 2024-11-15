@@ -9,8 +9,7 @@ plt.rcParams['figure.figsize'] = (20, 10)
 
 symbol = 'AAPL'
 start_date = '2021-01-01'
-api_key = '3c5c9a5538fd4c22af5e7794b2f0bfcb'
-api_url = 'https://api.twelvedata.com/time_series?symbol=AAPL&interval=1day&outputsize=5000&apikey=3c5c9a5538fd4c22af5e7794b2f0bfcb'
+
 raw_df = requests.get(api_url).json()
 #print (raw_df)
 df = pd.DataFrame(raw_df['values']).iloc[::-1].set_index('datetime').astype(float)
